@@ -18,7 +18,7 @@ import javax.jws.WebParam;
 public class Server {
     int count;
 
-    
+    // This method returns a number of letters in a text.
     @WebMethod(operationName = "getLetterCount")
     public int getLetterCount(@WebParam(name = "text") String text) {
         count = 0;
@@ -31,17 +31,19 @@ public class Server {
          return count;
     }
     
+    //This method returns a number words in a text.
     @WebMethod(operationName = "getWordCount")
     public int getWordCount(@WebParam(name = "text") String text){
         count = 0;
         String[] lines = text.split("\\n");
-        for (String line : lines){      //using java for each loop to print elements of string a
-            String[] words = line.split("\\s"); // Split the string based on white space
+        for (String line : lines){      
+            String[] words = line.split("\\s"); 
             count = words.length;
         }
         return count;
     }
     
+    //This method returns a number of lines in a text.
     @WebMethod(operationName = "getLineCount")
     public int getLineCount(@WebParam(name = "text") String text){
         count = 0;
